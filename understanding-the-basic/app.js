@@ -1,6 +1,10 @@
-// const http = require('./http.js'); //to find local file
-
-const http = require("http"); //to find global file
+//to find local file
+// const http = require('./http.js');
+//core model for request
+const http = require("http");
+//another core model require fileSystem
+const fs = require("fs");
+const { RedirectHandler } = require("undici-types");
 
 // function reListner(req, res) {
 //   function call when hit createServer
@@ -20,8 +24,8 @@ const server = http.createServer((req, res) => {
   //   for return response we comment exit
   //process.exit(); // if exit after execute
   const url = req.url;
+  const method = req.method;
   if (url === "/") {
-    res.setHeader("Content-Type", "text/html");
     res.write("<html>");
     res.write("<head><title>Enter Message</title></head>");
     res.write(
@@ -31,6 +35,14 @@ const server = http.createServer((req, res) => {
     return res.end(); //to end function execution
   }
 
+  //   to make sure the method will be POST `method === 'POST'`;
+  if (url === 'message' && method === 'POST') {
+    fs.writeFileSync('message.txt', 'DUMMY');
+    // 302 for Redirection
+    res.statusCode = 302;
+    res.setHeader('Location', '/');
+    return res.end(); //to end function execution
+  }
   res.setHeader("Content-Type", "text/html");
   res.write("<html>");
   res.write("<head><title>My First Page</title></head>");
