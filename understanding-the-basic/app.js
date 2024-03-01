@@ -24,23 +24,46 @@ const server = http.createServer((req, res) => {
   //process.exit(); // if exit after execute
   const url = req.url;
   const method = req.method;
-  if (url === '/') {
-    res.write('<html>');
-    res.write('<head><title>Enter Message</title></head>');
+  if (url === "/") {
+    res.write("<html>");
+    res.write("<head><title>Enter Message</title></head>");
     res.write(
       '<body><h1><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></h1></body>'
     );
-    res.write('</html>');
+    res.write("</html>");
     return res.end(); //to end function execution
   }
 
   //   to make sure the method will be POST `method === 'POST'`;
-  if (url === 'message' && method === 'POST') {
-    fs.writeFileSync('message.txt', 'DUMMY');
-    // 302 for Redirection
-    res.statusCode = 302;
-    res.setHeader('Location', '/');
-    return res.end(); //to end function execution
+  if (url === "/message" && method === "POST") {
+    const body = [];
+    // `ON` allow listen EventListener
+    req.on("data", (chunk) => {
+      console.log(chunk);
+      body.push(chunk);
+    });
+    req.on("end", () => {
+      const parseBody = Buffer.concat(body).toString();
+      const message = parseBody.split("=")[1];
+      console.log(parseBody);
+      fs.writeFile("message.txt", message, (err) => {
+        if (err) {
+          console.error(err);
+          res.statusCode = 500;
+          res.end("Error occurred while writing to file");
+        } else {
+          res.statusCode = 302;
+          res.setHeader("Location", "/");
+          return res.end();
+        }
+      });
+    });
+    return;
+    // fs.writeFileSync("message.txt", "DUMMY");
+    // // 302 for Redirection
+    // res.statusCode = 302;
+    // res.setHeader("Location", "/");
+    // return res.end(); //to end function execution
   }
   res.setHeader("Content-Type", "text/html");
   res.write("<html>");
