@@ -4,7 +4,6 @@
 const http = require("http");
 //another core model require fileSystem
 const fs = require("fs");
-const { RedirectHandler } = require("undici-types");
 
 // function reListner(req, res) {
 //   function call when hit createServer
@@ -25,13 +24,13 @@ const server = http.createServer((req, res) => {
   //process.exit(); // if exit after execute
   const url = req.url;
   const method = req.method;
-  if (url === "/") {
-    res.write("<html>");
-    res.write("<head><title>Enter Message</title></head>");
+  if (url === '/') {
+    res.write('<html>');
+    res.write('<head><title>Enter Message</title></head>');
     res.write(
       '<body><h1><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></h1></body>'
     );
-    res.write("</html>");
+    res.write('</html>');
     return res.end(); //to end function execution
   }
 
