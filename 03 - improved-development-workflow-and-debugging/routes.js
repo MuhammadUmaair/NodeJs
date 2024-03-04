@@ -37,19 +37,8 @@ const requestHandler = (req, res) => {
   }
 };
 
-// when you export one things
-// module.exports = requestHandler;
-
 // when you export many things
-// module.exports = {
-//   handler: requestHandler,
-//   someText: "Some hard coded text",
-// };
-
-//another way to export multiple things
-// module.exports.handler = requestHandler;
-// module.exports.someText = "Some text here";
-
-//another shortcut way to export multiple things
-exports.handler = requestHandler;
-exports.someText = "Some text here";
+module.exports = {
+  handler: requestHandler,
+  someText: "Some hard coded text",
+};
