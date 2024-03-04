@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MuhammadUmaair/NodeJs/issues"
   },
-  "homepage": "https://github.com/MuhammadUmaair/NodeJs#readme"
+  "homepage": "https://github.com/MuhammadUmaair/NodeJs#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
