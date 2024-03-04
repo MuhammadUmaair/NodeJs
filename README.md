@@ -15,5 +15,8 @@ This project is a complete guide to Node.js, covering various aspects and featur
 - Author: Muhammad Umair //write author name
 - License: ISC //license if publically accessable
 
+## Install Third-Party Packages
+- npm install nodemon --save-dev
+
 ## Keywords
 Node.js, JavaScript, Web Development
