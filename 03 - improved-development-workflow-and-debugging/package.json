@@ -1,0 +1,23 @@
+{
+  "name": "03---improved-development-workflow-and-debugging",
+  "version": "1.0.0",
+  "description": "Complete Node.js Guide",
+  "main": "appwithroutes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node appwithroutes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MuhammadUmaair/NodeJs.git"
+  },
+  "keywords": [
+    "Node.js"
+  ],
+  "author": "Muhammad Umair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MuhammadUmaair/NodeJs/issues"
+  },
+  "homepage": "https://github.com/MuhammadUmaair/NodeJs#readme"
+}
