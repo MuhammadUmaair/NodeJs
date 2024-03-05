@@ -1,14 +1,16 @@
 const path = require("path");
 const express = require("express");
+
+const rootDir = require("../util/path");
 const router = express.Router();
 
 // Route for adding a product (GET request)
 router.get("/add-product", (req, res, next) => {
   // Send a form to add a product
-  res.sendFile(path.join(__dirname, "../", "views", "add-product.html"));
+  res.sendFile(path.join(rootDir, "views", "add-product.html"));
 
-  //request can't continue journey, so we add next function that allows the request to continue to the next middleware in line
-  //   next();
+  // Continue to the next middleware
+  // next();
 });
 
 // Route for handling product addition (POST request)
