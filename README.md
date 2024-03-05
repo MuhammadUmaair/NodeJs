@@ -18,6 +18,8 @@ This project is a complete guide to Node.js, covering various aspects and featur
 ## Install Third-Party Packages
 
 - Run `npm install nodemon --save-dev` to install Nodemon as a development dependency.
+- Run `npm install` to install Node Module.
+- Run `npm install --save express` to install ExpressJs as a production dependency.
 - Add 'nodemon' to the 'start' script in package.json. This allows you to run `npm start`, and if you make changes to your code and save, the server will restart automatically.
 
 
