@@ -26,7 +26,8 @@ To get started with this project, follow these simple steps:
 - Run `npm install --save express` to install ExpressJs as a production dependency.
 - Add 'nodemon' to the 'start' script in package.json. This allows you to run `npm start`, and if you make changes to your code and save, the server will restart automatically.
 
-```json
+```
+json
 "scripts": {
   "start": "nodemon"
 }
