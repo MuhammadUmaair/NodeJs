@@ -25,6 +25,7 @@ To get started with this project, follow these simple steps:
 - Run `npm install` to install Node Module.
 - Run `npm install --save body-parser` to install body-parser.
 - Run `npm install --save express` to install ExpressJs as a production dependency.
+- Run `npm install --save ejs pug express-handlebars` to install EJS, PUG and Express-Handlebar as a production dependency.
 - Add 'nodemon' to the 'start' script in package.json. This allows you to run `npm start`, and if you make changes to your code and save, the server will restart automatically.
 
 ```
@@ -36,9 +37,12 @@ json
 
 ## Official Links
 
-- Npm Js Documentation:[Npm.Js Documentation](https://docs.npmjs.com/cli/v8/commands/npm-install)
-- Node.js Documentation :[Node.js Documentation ](https://nodejs.org/en)
-- Express Js:[Express.Js Documentation](https://expressjs.com)
+- Npm Js Documentation - [Npm.Js Documentation](https://docs.npmjs.com/cli/v8/commands/npm-install)
+- Node.js Documentation - [Node.js Documentation ](https://nodejs.org/en)
+- Express Js - [Express.Js Documentation](https://expressjs.com)
+- Ejs - [EJs Documentation](https://www.npmjs.com/package/ejs)
+- Pug - [Pug Documentation](https://www.npmjs.com/package/pug)
+- Express-Handlebar - [Express-Handlebar Documentation](https://www.npmjs.com/package/express-handlebars)
 - Express.js API Reference - [Express.js API Reference](https://expressjs.com/en/4x/api.html#app.use)
 
 ## Contributing
