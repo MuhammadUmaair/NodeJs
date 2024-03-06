@@ -25,7 +25,7 @@ To get started with this project, follow these simple steps:
 - Run `npm install` to install Node Module.
 - Run `npm install --save body-parser` to install body-parser.
 - Run `npm install --save express` to install ExpressJs as a production dependency.
-- Run `npm install --save ejs pug express-handlebars` to install EJS, PUG and Express-Handlebar as a production dependency.
+- Run `npm install --save ejs pug express-handlebars` to install EJS, PUG and Express-Handlebar `Template Engine` as a production dependency.
 - Add 'nodemon' to the 'start' script in package.json. This allows you to run `npm start`, and if you make changes to your code and save, the server will restart automatically.
 
 ```
