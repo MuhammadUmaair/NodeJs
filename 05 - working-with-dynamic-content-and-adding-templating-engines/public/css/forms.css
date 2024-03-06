@@ -1,0 +1,37 @@
+/* forms.css */
+.product-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-control input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-control button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.form-control button:hover {
+  background-color: #45a049;
+}
