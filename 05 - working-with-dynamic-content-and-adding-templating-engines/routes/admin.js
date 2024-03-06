@@ -1,24 +1,23 @@
 const path = require("path");
 const express = require("express");
-
 const rootDir = require("../util/path");
 const router = express.Router();
+const products = [];
 
-// Route for adding a product (GET request)
+// Route for displaying the "add product" form
 router.get("/add-product", (req, res, next) => {
-  // Send a form to add a product
+  // Send the add-product.html file
   res.sendFile(path.join(rootDir, "views", "add-product.html"));
-
-  // Continue to the next middleware
-  // next();
 });
 
-// Route for handling product addition (POST request)
+// Route for adding a product (POST request)
 router.post("/add-product", (req, res, next) => {
-  // Log the incoming data from the form
-  console.log(req.body);
+  // Add the submitted product to the products array
+  products.push({ title: req.body.title });
   // Redirect to the home page
   res.redirect("/");
 });
 
-module.exports = router;
+// Exporting the router and products array
+exports.routes = router;
+exports.products = products;
