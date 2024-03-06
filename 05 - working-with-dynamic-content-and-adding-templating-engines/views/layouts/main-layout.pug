@@ -3,9 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{pageTitle}
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/forms.css")      
+        title #{pageTitle}   
         link(rel="stylesheet", href="/css/errors.css")
         block styles
     body
@@ -13,7 +11,7 @@ html(lang="en")
             nav.main-header_nav
                 ul.main-header__item-list
                     li.main-header__item
-                        a(href="/") Shop
+                        a(href="/", class=(path==='/' ? 'active' : 'No Product')) Shop
                     li.main-header__item
-                        a.btn(href="/admin/add-product") Add Product
+                        a.btn(href="/admin/add-product", class=(path==='/admin/add-product' ? 'active' : 'No Class')) Add Product
         block content
