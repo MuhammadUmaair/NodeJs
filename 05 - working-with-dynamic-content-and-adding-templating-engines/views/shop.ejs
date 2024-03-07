@@ -1,0 +1,39 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+
+        <%- include('includes/navigation.ejs')%>
+            <main>
+                <% if (prods.length> 0) { %>
+                    <div class="grid">
+                        <% prods.forEach(function(production) { %>
+                            <article class="card product-item">
+                                <header>
+                                    <h1 class="product__title">
+                                        <%= production.title %>
+                                    </h1>
+                                </header>
+                                <div class="card__image">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbXCpiYKfm11YUjU715AE4xto0XO6fzBiL8Q&usqp=CAU"
+                                        alt="Product Image">
+                                </div>
+                                <div class="card__content">
+                                    <h2 class="product_price">$19.99</h2>
+                                    <p class="product__description">Lorem ipsum dolor sit amet consectetur.</p>
+                                </div>
+                                <div class="card__actions">
+                                    <button class="btn">Add to Cart</button>
+                                </div>
+                            </article>
+                            <% }) %>
+                    </div>
+                    <% } else { %>
+                        <h1 class="product__title">No Products</h1>
+                        <% } %>
+            </main>
+
+            <%- include('includes/end.ejs')%>
